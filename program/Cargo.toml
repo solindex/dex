@@ -1,0 +1,38 @@
+[package]
+name = "solindex-dex"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+no-entrypoint = []
+
+[dependencies]
+num-derive = "0.3.3"
+solana-program = "1.8.0"
+bytemuck = {version = "1.7.2", features = ["derive"]}
+num_enum = "0.5.4"
+borsh = "0.9.1"
+thiserror = "1.0.24"
+num-traits = "0.2"
+enumflags2 = "0.7.1"
+spl-token = "3.2.0"
+solindex-orderbook = { git = "https://github.com/solindex/orderbook.git", features = ["no-entrypoint", "lib"]}
+solindex-utils = { git = "https://github.com/solindex/utils.git", features = ["instruction_params_casting"] }
+
+[dev-dependencies]
+solana-sdk = "1.8.0"
+solana-client = "1.8.0"
+rand = "0.8.3"
+serum_dex = { git = "https://github.com/project-serum/serum-dex.git", features = ["no-entrypoint"] }
+solana-program-test = "1.7.10"
+tokio = {version="1.12.0", features = ["macros", "rt"]}
+futures = "0.3.15"
+futures-util = "0.3.15"
+rand_distr = "0.4.0"
+log4rs = "1.0.0"
+spl-associated-token-account = {version = "1.0.2", features = ["no-entrypoint"]}
+
+[lib]
+crate-type = ["cdylib", "lib"]

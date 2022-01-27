@@ -1,0 +1,10 @@
+import { Connection, PublicKey, TransactionInstruction, Keypair } from "@solana/web3.js";
+import BN from "bn.js";
+export declare function throwIfNull<T>(value: T | null, message?: string): T;
+export declare const getMintDecimals: (connection: Connection, mint: PublicKey) => Promise<any>;
+export declare const getTokenBalance: (connection: Connection, address: PublicKey) => Promise<any>;
+export declare function findAssociatedTokenAddress(walletAddress: PublicKey, tokenMintAddress: PublicKey): Promise<PublicKey>;
+export declare const createAssociatedTokenAccount: (fundingAddress: PublicKey, walletAddress: PublicKey, splTokenMintAddress: PublicKey) => Promise<TransactionInstruction>;
+export declare const signAndSendTransactionInstructions: (connection: Connection, signers: Array<Keypair>, feePayer: Keypair, txInstructions: Array<TransactionInstruction>) => Promise<string>;
+export declare function sleep(ms: number): Promise<unknown>;
+export declare const divideBnToNumber: (numerator: BN, denominator: BN) => number;
