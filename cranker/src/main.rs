@@ -9,8 +9,8 @@ use solindex_cranker::Context;
 fn main() {
     let matches = App::new("dex-crank")
         .version("0.1")
-        .author("Bonfida")
-        .about("Serum dex v4 cranking runtime")
+        .author("Solindex")
+        .about("Serum v4 cranking runtime")
         .arg(
             Arg::with_name("url")
                 .short("u")
